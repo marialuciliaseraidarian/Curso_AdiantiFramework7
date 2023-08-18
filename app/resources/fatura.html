@@ -1,0 +1,106 @@
+<!--[main]-->
+
+
+<div class="row">
+	<div class="col-sm-12">
+		<div class="Fatura-title text-center mb-3">
+			<h2>Fatura #{{fatura->id}}</h2>
+			<strong>Data:</strong> date_format({{fatura->dt_pedido}},'d/m/Y')												
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-6">																
+				<h3>Dados cliente:</h3>
+				<address>
+					{{cliente->nome}}<br>
+					{{cliente->endereco}}<br>
+					{{cliente->complemento}}<br>
+					{{cliente->cidade}}<br>
+				</address>
+			</div>
+			<div class="col-sm-6 float-right text-right">																
+				<h3>Dados entrega:</h3><br>
+				<address>
+					{{entrega->nome}}<br>
+					{{entrega->endereco}}<br>
+					{{entrega->complemento}}<br>
+					{{entrega->cidade}}<br>
+				</address>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<h3>Método pagamento:</h3>
+				<address>
+					{{fatura->metodo}}<br>
+					{{fatura->conta}}
+				</address>
+			</div>
+			<div class="col-sm-6 float-right text-right">
+				<h3>Data pedido:</h3>
+				<address>
+					date_format({{fatura->dt_pedido}},'d/m/Y')<br><br>
+				</address>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title"><strong>Itens pedido</strong></h3>
+			</div>
+			<div class="panel-body">
+				<div class="table-responsive">
+					<table class="table table-condensed" style="border-collapse:collapse">
+						<thead>
+							<tr>
+								<td><strong>Item</strong></td>
+								<td><strong>Descrição</strong></td>
+								<td class="text-center"><strong>Preço</strong></td>
+								<td class="text-center"><strong>Quantidade</strong></td>
+								<td class="text-right"><strong>Totais</strong></td>
+							</tr>
+						</thead>
+						<tbody>
+							<!--[items]-->
+							<tr>
+								<td>{{id}}</td>
+								<td>{{descricao}}</td>
+								<td class="text-center">{{preco}}</td>
+								<td class="text-center">{{qtde}}</td>
+								<td class="text-right">R$ number_format(evaluate( {{preco}} * {{qtde}} ), 2, ',', '.')</td>
+								<!-- {% set subtotal += evaluate( {{preco}} * {{qtde}} ) %} -->
+							</tr>
+							<!--[/items]-->
+							<tr>
+								<td style="border-top:1px solid black" class="thick-line"></td>
+								<td style="border-top:1px solid black" class="thick-line"></td>
+								<td style="border-top:1px solid black" class="thick-line"></td>
+								<td style="border-top:1px solid black" class="thick-line text-center"><strong>Subtotal</strong></td>
+								<td style="border-top:1px solid black" class="thick-line text-right">R$ number_format({{subtotal}}, 2, ',', '.')</td>
+							</tr>
+							<tr>
+								<td class="no-line"></td>
+								<td class="no-line"></td>
+								<td class="no-line"></td>
+								<td class="no-line text-center"><strong>Frete</strong></td>
+								<td class="no-line text-right">R$ number_format({{fatura->frete}}, 2, ',', '.')</td>
+							</tr>
+							<tr>
+								<td class="no-line"></td>
+								<td class="no-line"></td>
+								<td class="no-line"></td>
+								<td class="no-line text-center"><strong>Total</strong></td>
+								<td class="no-line text-right">R$ number_format(evaluate( {{subtotal}} + {{fatura->frete}} ), 2, ',', '.')</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--[/main]-->

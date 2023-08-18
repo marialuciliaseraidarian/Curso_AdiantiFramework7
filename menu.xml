@@ -1,0 +1,450 @@
+<menu>
+    <menuitem label='Home'>
+        <icon>fa:home fa-fw</icon>
+        <menu>
+            <menuitem label='Início'>
+                <icon>far:life-ring fa-fw</icon>
+                <action>WelcomeView</action>
+            </menuitem>
+            
+            <menuitem label='Aprenda'>
+                <icon>fa:book fa-fw</icon>
+                <action>LearnView</action>
+            </menuitem>
+            
+            <menuitem label='Template'>
+                <icon>fa:desktop fa-fw</icon>
+                <action>TemplateView</action>
+            </menuitem>
+            
+            <menuitem label='Construa'>
+                <icon>fa:magic fa-fw</icon>
+                <action>BuildView</action>
+            </menuitem>
+        </menu>
+    </menuitem>
+    <menuitem label='Configuração'>
+        <icon>fa:cog fa-fw</icon>
+        <menu>
+            <menuitem label='Ver módulos'>
+                <icon>fa:cube fa-fw</icon>
+                <action>SystemModulesCheckView</action>
+            </menuitem>
+            
+            <menuitem label='Setup PHP'>
+                <icon>fa:code fa-fw</icon>
+                <action>SystemPHPInfoView</action>
+            </menuitem>
+        </menu>
+    </menuitem>
+    
+    <menuitem label='Básico'>
+        <icon>fa:cube fa-fw</icon>
+        <menu>
+            <menuitem label='Teste'>
+                <icon>far:circle fa-fw</icon>
+                <action>TesteView#method=onEvento</action>
+            </menuitem>
+            <menuitem label='Template Básico'>
+                <icon>far:circle fa-fw</icon>
+                <action>TemplateViewBasico</action>
+            </menuitem>
+            <menuitem label='Template com máscaras'>
+                <icon>far:circle fa-fw</icon>
+                <action>TemplateViewMask</action>
+            </menuitem>
+            <menuitem label='Template com repetição'>
+                <icon>far:circle fa-fw</icon>
+                <action>TemplateViewRepeat</action>
+            </menuitem>
+            <menuitem label='Página simples'>
+                <icon>far:circle fa-fw</icon>
+                <action>SinglePageView</action>
+            </menuitem>
+            <menuitem label='Janela simples'>
+                <icon>far:circle fa-fw</icon>
+                <action>SingleWindowView</action>
+            </menuitem>
+            <menuitem label='Janela sob demanda'>
+                <icon>far:circle fa-fw</icon>
+                <action>OnDemandWindowView</action>
+            </menuitem>
+            <menuitem label='Janela modal'>
+                <icon>far:circle fa-fw</icon>
+                <action>ModalWindowView</action>
+            </menuitem>
+            <menuitem label='Cortina lateral'>
+                <icon>far:circle fa-fw</icon>
+                <action>SidePageView</action>
+            </menuitem>
+            <menuitem label='PDF Embarcado'>
+                <icon>far:circle fa-fw</icon>
+                <action>EmbeddedPDFView</action>
+            </menuitem>
+            <menuitem label='Vídeo embarcado'>
+                <icon>far:circle fa-fw</icon>
+                <action>EmbeddedViewView</action>
+            </menuitem>
+            <menuitem label='Sistema embarcado'>
+                <icon>far:circle fa-fw</icon>
+                <action>ExternalSystemView</action>
+            </menuitem>
+            <menuitem label='Panel Group'>
+                <icon>far:circle fa-fw</icon>
+                <action>PanelGroupView</action>
+            </menuitem>
+            <menuitem label='Barra de rolagem'>
+                <icon>far:circle fa-fw</icon>
+                <action>ScrollView</action>
+            </menuitem>
+            <menuitem label='Notebook'>
+                <icon>far:circle fa-fw</icon>
+                <action>NotebookView</action>
+            </menuitem>
+            <menuitem label='Caixa vertical'>
+                <icon>far:circle fa-fw</icon>
+                <action>VBoxView</action>
+            </menuitem>
+            <menuitem label='Diálogo de mensagem'>
+                <icon>far:circle fa-fw</icon>
+                <action>InformationView</action>
+            </menuitem>
+            <menuitem label='Diálogo de pergunta'>
+                <icon>far:circle fa-fw</icon>
+                <action>QuestionView</action>
+            </menuitem>
+            <menuitem label='Diálogo de input'>
+                <icon>far:circle fa-fw</icon>
+                <action>DialogInputView</action>
+            </menuitem>
+        </menu>
+    </menuitem>
+    
+    <menuitem label='Banco de dados'>
+        <icon>fa:cube fa-fw</icon>
+        <menu>
+            <menuitem label='Conexão manual'>
+                <icon>far:circle fa-fw</icon>
+                <action>ConexaoManual</action>
+            </menuitem>
+            <menuitem label='Prepare'>
+                <icon>far:circle fa-fw</icon>
+                <action>ConexaoPrepare</action>
+            </menuitem>
+            <menuitem label='Objeto Store'>
+                <icon>far:circle fa-fw</icon>
+                <action>ObjectStore</action>
+            </menuitem>
+            <menuitem label='Objeto Create'>
+                <icon>far:circle fa-fw</icon>
+                <action>ObjectCreate</action>
+            </menuitem>
+            <menuitem label='Objeto Load'>
+                <icon>far:circle fa-fw</icon>
+                <action>ObjectLoad</action>
+            </menuitem>
+            <menuitem label='Objeto Find'>
+                <icon>far:circle fa-fw</icon>
+                <action>ObjectFind</action>
+            </menuitem>
+            <menuitem label='Objeto Update'>
+                <icon>far:circle fa-fw</icon>
+                <action>ObjectUpdate</action>
+            </menuitem>
+            <menuitem label='Objeto Delete'>
+                <icon>far:circle fa-fw</icon>
+                <action>ObjectDelete</action>
+            </menuitem>
+            <menuitem label='Objeto associado'>
+                <icon>far:circle fa-fw</icon>
+                <action>ObjetoAssociado</action>
+            </menuitem>
+            <menuitem label='Objeto Array'>
+                <icon>far:circle fa-fw</icon>
+                <action>ObjetoArray</action>
+            </menuitem>
+            <menuitem label='Objeto JSON'>
+                <icon>far:circle fa-fw</icon>
+                <action>ObjetoJson</action>
+            </menuitem>
+            <menuitem label='Objeto Render'>
+                <icon>far:circle fa-fw</icon>
+                <action>ObjetoRender</action>
+            </menuitem>
+            <menuitem label='Coleção Count'>
+                <icon>far:circle fa-fw</icon>
+                <action>CollectionCount</action>
+            </menuitem>
+            <menuitem label='Coleção Load'>
+                <icon>far:circle fa-fw</icon>
+                <action>CollectionLoad</action>
+            </menuitem>
+            <menuitem label='Coleção Limit'>
+                <icon>far:circle fa-fw</icon>
+                <action>CollectionLimit</action>
+            </menuitem>
+            <menuitem label='Coleção Update'>
+                <icon>far:circle fa-fw</icon>
+                <action>CollectionUpdate</action>
+            </menuitem>
+            <menuitem label='Coleção Batch Update'>
+                <icon>far:circle fa-fw</icon>
+                <action>CollectionBatchUpdate</action>
+            </menuitem>
+            <menuitem label='Coleção Delete'>
+                <icon>far:circle fa-fw</icon>
+                <action>CollectionDelete</action>
+            </menuitem>
+            <menuitem label='Atalhos para coleções'>
+                <icon>far:circle fa-fw</icon>
+                <action>CollectionShortcurts</action>
+            </menuitem>
+            <menuitem label='Objetos relacionados'>
+                <icon>far:circle fa-fw</icon>
+                <action>ObjetoRelacionado</action>
+            </menuitem>
+            <menuitem label='Aggregations'>
+                <icon>far:circle fa-fw</icon>
+                <action>CollectionAggregation</action>
+            </menuitem>
+        </menu>
+    </menuitem>
+    
+    <menuitem label='Formulários'>
+        <icon>fa:cube fa-fw</icon>
+        <menu>
+            <menuitem label='Formulário Manual'>
+                <icon>far:circle fa-fw</icon>
+                <action>FormularioManual</action>
+            </menuitem>
+            <menuitem label='Formulário Bootstrap'>
+                <icon>far:circle fa-fw</icon>
+                <action>FormularioBootstrap</action>
+            </menuitem>
+            <menuitem label='Formulário Colunas'>
+                <icon>far:circle fa-fw</icon>
+                <action>FormularioBootstrapColunas</action>
+            </menuitem>
+            <menuitem label='Formulário Vertical'>
+                <icon>far:circle fa-fw</icon>
+                <action>FormularioBootstrapVertical</action>
+            </menuitem>
+            <menuitem label='Post estático'>
+                <icon>far:circle fa-fw</icon>
+                <action>FormularioBootstrapEstatico</action>
+            </menuitem>
+            <menuitem label='Field list'>
+                <icon>far:circle fa-fw</icon>
+                <action>BootstrapFieldList</action>
+            </menuitem>
+            <menuitem label='Check list'>
+                <icon>far:circle fa-fw</icon>
+                <action>FormularioCheckList</action>
+            </menuitem>
+            <menuitem label='Mascaras'>
+                <icon>far:circle fa-fw</icon>
+                <action>FormularioMascaras</action>
+            </menuitem>
+            <menuitem label='Validações'>
+                <icon>far:circle fa-fw</icon>
+                <action>FormularioValidacoes</action>
+            </menuitem>
+            <menuitem label='Seleção'>
+                <icon>far:circle fa-fw</icon>
+                <action>FormularioSelecoes</action>
+            </menuitem>
+            <menuitem label='Seleção banco'>
+                <icon>far:circle fa-fw</icon>
+                <action>FormularioSelecoesBanco</action>
+            </menuitem>
+            <menuitem label='Interações'>
+                <icon>far:circle fa-fw</icon>
+                <action>FormularioInteracoes</action>
+            </menuitem>
+            <menuitem label='Sort List'>
+                <icon>far:circle fa-fw</icon>
+                <action>SortList</action>
+            </menuitem>
+            <menuitem label='Editor HTML'>
+                <icon>far:circle fa-fw</icon>
+                <action>HtmlEditor</action>
+            </menuitem>
+            <menuitem label='Ler Barcode/QRCode'>
+                <icon>far:circle fa-fw</icon>
+                <action>FormCodeReader</action>
+            </menuitem>
+            <menuitem label='Image cropper'>
+                <icon>far:circle fa-fw</icon>
+                <action>FormImageUploader</action>
+            </menuitem>
+        </menu>
+    </menuitem>
+    <menuitem label='Datagrids'>
+        <icon>fa:cube fa-fw</icon>
+        <menu>
+            <menuitem label='Datagrid'>
+                <icon>far:circle fa-fw</icon>
+                <action>DatagridBootstrap</action>
+            </menuitem>
+            <menuitem label='Grupo de ações'>
+                <icon>far:circle fa-fw</icon>
+                <action>DatagridGrupoAcoes</action>
+            </menuitem>
+            <menuitem label='Ação condicional'>
+                <icon>far:circle fa-fw</icon>
+                <action>DatagridAcaoCondicional</action>
+            </menuitem>
+            <menuitem label='Scroll horizontal'>
+                <icon>far:circle fa-fw</icon>
+                <action>DatagridScrollHorizontal</action>
+            </menuitem>
+            <menuitem label='Scroll vertical'>
+                <icon>far:circle fa-fw</icon>
+                <action>DatagridScrollVertical</action>
+            </menuitem>
+            <menuitem label='Colunas escondidas'>
+                <icon>far:circle fa-fw</icon>
+                <action>DatagridColunasEscondidas</action>
+            </menuitem>
+            <menuitem label='Busca'>
+                <icon>far:circle fa-fw</icon>
+                <action>DatagridBusca</action>
+            </menuitem>
+            <menuitem label='Formatacao'>
+                <icon>far:circle fa-fw</icon>
+                <action>DatagridFormatacao</action>
+            </menuitem>
+            <menuitem label='Links'>
+                <icon>far:circle fa-fw</icon>
+                <action>DatagridLinks</action>
+            </menuitem>
+            <menuitem label='Cálculos'>
+                <icon>far:circle fa-fw</icon>
+                <action>DatagridCalculos</action>
+            </menuitem>
+            <menuitem label='Imagens'>
+                <icon>far:circle fa-fw</icon>
+                <action>DatagridImagem</action>
+            </menuitem>
+            <menuitem label='Exportação'>
+                <icon>far:circle fa-fw</icon>
+                <action>DatagridExporta</action>
+            </menuitem>
+            <menuitem label='Edição'>
+                <icon>far:circle fa-fw</icon>
+                <action>DatagridInput</action>
+            </menuitem>
+        </menu>
+    </menuitem>
+    <menuitem label='Cadastros'>
+        <icon>fa:cube fa-fw</icon>
+        <menu>
+            <menuitem label='Cidades form'>
+                <icon>far:circle fa-fw</icon>
+                <action>CidadeForm</action>
+            </menuitem>
+            <menuitem label='Cidades trait Form'>
+                <icon>far:circle fa-fw</icon>
+                <action>CidadeTraitForm</action>
+            </menuitem>
+            <menuitem label='Cidades List'>
+                <icon>far:circle fa-fw</icon>
+                <action>CidadeList</action>
+            </menuitem>
+            <menuitem label='Cidades trait List'>
+                <icon>far:circle fa-fw</icon>
+                <action>CidadeTraitList</action>
+            </menuitem>
+            <menuitem label='Clientes List'>
+                <icon>far:circle fa-fw</icon>
+                <action>ClienteList</action>
+            </menuitem>
+            <menuitem label='Venda List'>
+                <icon>far:circle fa-fw</icon>
+                <action>VendaList</action>
+            </menuitem>
+            <menuitem label='Lista de edição'>
+                <icon>far:circle fa-fw</icon>
+                <action>ProdutoEditList</action>
+            </menuitem>
+            <menuitem label='Lista de seleção'>
+                <icon>far:circle fa-fw</icon>
+                <action>ProdutoSelectList</action>
+            </menuitem>
+        </menu>
+    </menuitem>
+    <menuitem label='Relatórios e gráficos'>
+        <icon>fa:cube fa-fw</icon>
+        <menu>
+            <menuitem label='Relatório tabular'>
+                <icon>far:circle fa-fw</icon>
+                <action>ClienteReport</action>
+            </menuitem>
+            <menuitem label='Relatório SQL'>
+                <icon>far:circle fa-fw</icon>
+                <action>ClienteQueryReport</action>
+            </menuitem>
+            <menuitem label='Fatura'>
+                <icon>far:circle fa-fw</icon>
+                <action>FaturaView</action>
+            </menuitem>
+            <menuitem label='Gráfico pizza'>
+                <icon>far:circle fa-fw</icon>
+                <action>GraficoPizza</action>
+            </menuitem>
+            <menuitem label='Gráficos barras'>
+                <icon>far:circle fa-fw</icon>
+                <action>GraficoBarras</action>
+            </menuitem>
+            <menuitem label='Gráfico colunas'>
+                <icon>far:circle fa-fw</icon>
+                <action>GraficoColunas</action>
+            </menuitem>
+            <menuitem label='Gráfico linhas'>
+                <icon>far:circle fa-fw</icon>
+                <action>GraficoLinhas</action>
+            </menuitem>
+            <menuitem label='Dashboard'>
+                <icon>far:circle fa-fw</icon>
+                <action>DashboardView</action>
+            </menuitem>
+            <menuitem label='Barcode'>
+                <icon>far:circle fa-fw</icon>
+                <action>CodigoBarras</action>
+            </menuitem>
+            <menuitem label='QRCode'>
+                <icon>far:circle fa-fw</icon>
+                <action>CodigoQRCode</action>
+            </menuitem>
+        </menu>
+    </menuitem>
+    <menuitem label='Utilitários'>
+        <icon>fa:cube fa-fw</icon>
+        <menu>
+            <menuitem label='Cards'>
+                <icon>far:circle fa-fw</icon>
+                <action>CardView</action>
+            </menuitem>
+            <menuitem label='Ícones'>
+                <icon>far:circle fa-fw</icon>
+                <action>IconView</action>
+            </menuitem>
+            <menuitem label='Sistema de arquivos'>
+                <icon>far:circle fa-fw</icon>
+                <action>FilesystemIconView</action>
+            </menuitem>
+            <menuitem label='Timeline'>
+                <icon>far:circle fa-fw</icon>
+                <action>TimelineView</action>
+            </menuitem>
+            <menuitem label='Calendário'>
+                <icon>far:circle fa-fw</icon>
+                <action>Calendario</action>
+            </menuitem>
+            <menuitem label='Kanban'>
+                <icon>far:circle fa-fw</icon>
+                <action>KanbanView</action>
+            </menuitem>
+        </menu>
+    </menuitem>
+</menu>

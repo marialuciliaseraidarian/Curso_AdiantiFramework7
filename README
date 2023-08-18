@@ -1,0 +1,3 @@
+chmod 777 app/output
+chmod 777 tmp
+chmod 777 app/database -R
