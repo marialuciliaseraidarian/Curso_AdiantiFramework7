@@ -1,5 +1,5 @@
 <h1 align="center">
-<a><img align="center" height="120em" src="img/Icone-AdiantiFramework7.PNG"></a>
+<a><img align="center" height="80em" src="img/Icone-AdiantiFramework7.PNG"></a>
 </h1> 
 
 # Repositório de Códigos do Curso Dominando o Adianti Framework 7
@@ -18,7 +18,7 @@ O Adianti 7 é um framework PHP de código aberto, projetado para simplificar a 
 
 O curso é composto por 10 módulos, abrangendo 126 aulas ao longo de um total de 25 horas. O curso é ministrado pelo renomado Pablo Dall'Oglio, graduado em Análise de Sistemas e mestre em Engenharia de Software; ele também é autor dos livros "PHP-GTK", "Criando aplicações gráficas com PHP" e "Criando relatórios com PHP". Com uma vasta experiência no desenvolvimento de sistemas para gestão de negócios, Pablo está constantemente envolvido em projetos e implementações de softwares orientados a objetos.
 
-<h1 align="center">
-<a><img align="center" height="120em" src="img/CurosAdianteFrameworkimg.PNG"></a>
+<h1>
+<a><img align="center" height="300em" src="img/CurosAdianteFrameworkimg.PNG"></a>
 </h1> 
 
