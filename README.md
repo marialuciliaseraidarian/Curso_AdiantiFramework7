@@ -1,5 +1,5 @@
 <h1 align="center">
-<a><img align="center" height="80em" src="img/Icone-AdiantiFramework7.PNG"></a>
+<a><img align="center" height="80em" src="img/adiantiFramework_logo2.PNG"></a>
 </h1> 
 
 # Repositório de Códigos do Curso Dominando o Adianti Framework 7
