@@ -5,6 +5,7 @@ use Adianti\Control\TPage;
 use Adianti\Control\TWindow;
 use Adianti\Widget\Container\TVBox;
 use Adianti\Widget\Dialog\TMessage;
+use Adianti\Widget\Dialog\TToast;
 use Adianti\Widget\Form\TCombo;
 use Adianti\Widget\Form\TDate;
 use Adianti\Widget\Form\TEntry;
@@ -47,10 +48,11 @@ class FormFieldListEventsView extends TPage
         $this->fieldlist->generateAria();
         $this->fieldlist->width = '100%';
         $this->fieldlist->name = 'my_field_list';
+        //primeiro parâmetro é o nome do campo, segundo é o conteúdo da linha, e terceiro é são as propriedades daquela linha.
         $this->fieldlist->addField('<b>Unniq</b>',  $uniq,   ['width'=>'0%', 'uniqid' => true]);
         $this->fieldlist->addField('<b>Combo</b>',  $combo,  ['width'=>'25%']);
         $this->fieldlist->addField('<b>Text</b>',   $text,   ['width'=>'25%']);
-        $this->fieldlist->addField('<b>Number</b>', $number, ['width'=>'25%']);
+        $this->fieldlist->addField('<b>Number</b>', $number, ['width'=>'25%', 'sum' => true]);
         $this->fieldlist->addField('<b>Date</b>',   $date,   ['width'=>'25%']);
 
         $this->fieldlist->addButtonAction(new TAction( [$this, 'ShowRow'] ), 'fa:info-circle purple', 'Mostrar texto');
@@ -65,15 +67,19 @@ class FormFieldListEventsView extends TPage
         $this->form->addField($number);
         $this->form->addField($date);
 
+        //adiciona o cabeçalho à fieldList
         $this->fieldlist->addHeader();
+        //adiciona linhas em branco à fieldList
         $this->fieldlist->addDetail( new stdClass );
         $this->fieldlist->addDetail( new stdClass );
         $this->fieldlist->addDetail( new stdClass );
         $this->fieldlist->addDetail( new stdClass );
         $this->fieldlist->addDetail( new stdClass );
        
+        //adiciona ação de clonagem à fieldList
         $this->fieldlist->addCloneAction(new TAction( [$this, 'ShowRow'] ));
 
+        //adiciona soma total à fieldList
         $this->fieldlist->setTotalUpdateAction(new TAction( [$this, 'onTotalUpdate'] ));
 
         //Adiciona lista de campos ao formulário
@@ -138,14 +144,28 @@ class FormFieldListEventsView extends TPage
 
     public static function onTotalUpdate($param)
     {
-       echo '<pre>'; 
+       /* echo '<pre>'; 
        var_dump($param);
-       echo '</pre>';
+       echo '</pre>'; */
+
+       $grandtotal = 0;
+       //if para verificar se veio alguma coisa preenchida
+       if($param['list_data'])
+       {
+           foreach($param['list_data'] as $row)
+           {
+               //o str_replace vai mudar tudo o que está no primeiro vetor pelo que está no segundo vetor.
+               //o floatval força que o valor seja passado para float antes de ser somado.
+               $grandtotal += floatval(str_replace( ['.', ','], ['', '.'], $row['number']));
+           }
+       }
+
+       //insere um toast informando os valores totais
+       TToast::show('info', '<b>Total:</b> ' . number_format($grandtotal, 2, ',', '.'), 'bottom right');
     }
 
     public function onSave($param)
     {
-
         try {            
             $data = $this->fieldlist->getPostData();
             $this->form->validate();

@@ -237,6 +237,10 @@
                 <icon>far:circle fa-fw</icon>
                 <action>BootstrapFieldList</action>
             </menuitem>
+            <menuitem label='Field list Events'>
+                <icon>far:circle fa-fw</icon>
+                <action>FormFieldListEventsView</action>
+            </menuitem>
             <menuitem label='Check list'>
                 <icon>far:circle fa-fw</icon>
                 <action>FormularioCheckList</action>
