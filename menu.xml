@@ -310,6 +310,10 @@
                 <icon>far:circle fa-fw</icon>
                 <action>DatagridColunasEscondidas</action>
             </menuitem>
+             <menuitem label='Data Tables'>
+                <icon>far:circle fa-fw</icon>
+                <action>DatagridDataTables</action>
+            </menuitem>
             <menuitem label='Busca'>
                 <icon>far:circle fa-fw</icon>
                 <action>DatagridBusca</action>

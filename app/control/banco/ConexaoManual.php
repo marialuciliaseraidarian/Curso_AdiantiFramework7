@@ -9,21 +9,24 @@ class ConexaoManual extends TPage
     public function __construct()
     {
         parent::__construct();
-
+        
         try
         {
-            TTransaction::open('curso');//abre a transação com o BD curso.
+            TTransaction::open('curso');
             
             $conn = TTransaction::get();
+            
             $result = $conn->query('SELECT id, nome FROM cliente ORDER BY id');
-
-            foreach($result as $row)
+            
+            foreach ($result as $row)
             {
-                print $row['id'] . '-' .
+                print $row['id'] . '-'.
                       $row['nome'] . "<br>\n";
             }
             
-            TTransaction::close();//fecha a transação
+            //$conn->query("INSERT INTO estado (id, nome) VALUES (3, 'MG') ");
+            
+            TTransaction::close();
         }
         catch (Exception $e)
         {
