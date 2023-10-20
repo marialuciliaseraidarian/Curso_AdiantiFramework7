@@ -1,6 +1,9 @@
 <?php
 
+use Adianti\Control\TAction;
 use Adianti\Control\TPage;
+use Adianti\Control\TWindow;
+use Adianti\Widget\Base\TElement;
 use Adianti\Widget\Container\TPanelGroup;
 use Adianti\Widget\Datagrid\TDataGrid;
 use Adianti\Widget\Datagrid\TDataGridAction;
@@ -8,7 +11,7 @@ use Adianti\Widget\Datagrid\TDataGridColumn;
 use Adianti\Widget\Dialog\TMessage;
 use Adianti\Wrapper\BootstrapDatagridWrapper;
 
-class Datagrid extends TPage
+class DatagridExporta extends TPage
 {
     private $datagrid;
 
@@ -40,8 +43,82 @@ class Datagrid extends TPage
         $panel = new TPanelGroup('Datagrid');        
         $panel->add($this->datagrid);
 
+        $panel->addHeaderActionLink('Salvar PDF', new TAction( [ $this, 'exportaPDF' ], ['register_state' => 'false'] ), 'far:file-pdf red' );
+        $panel->addHeaderActionLink('Salvar CSV', new TAction( [ $this, 'exportaCSV' ], ['register_state' => 'false'] ), 'fa:table green' );
+
         parent::add($panel);
     }
+    
+    public function exportaPDF($param)
+    {
+        try
+        {
+            //clona a datagrid para dentro do obj $html
+            $html = clone $this->datagrid;
+            /* através do obj $html extrai o conteúdo bruto da datagrid
+            e acrescenta estilo bootstrap para impressão com o file_get_contents. */
+            $conteudo = file_get_contents('app/resources/styles-print.html') . $html->getContents();
+            $options = new \Dompdf\Options();
+            $options->setChroot(getcwd());
+            
+            // Converte o modelo HTML em PDF definindo o papel através do setPaper
+            $dompdf = new \Dompdf\Dompdf($options); 
+            $dompdf->loadHtml($conteudo);
+            $dompdf->setPaper('A4', 'portrait');
+            $dompdf->render();
+            
+            $file = 'app/output/datagrid-exporta.pdf';
+            
+            file_put_contents( $file, $dompdf->output() );
+            
+            //Define que a abertura do pdf será em uma nova janela
+            $window = TWindow::create('Exportação', 0.8, 0.8);
+             //imprime o pdf em tela
+            $object = new TElement('object');
+            $object->data = $file;
+            $object->type = 'application/pdf';
+            $object->style = 'width:100%; height: calc(100% - 10px)';
+            
+            $window->add($object);
+            $window->show();
+        }
+        catch (Exception $e)
+        {
+            new TMessage('error', $e->getMessage());
+        }
+    }
+    
+    public function exportaCSV($param)
+    {
+        try
+        {
+            //Extrai dados da datagrid
+            $data = $this->datagrid->getOutputData();
+            
+            //Verifica se retornou dados e o que fazer com os dados retornados
+            if ($data)
+            {
+                //define o arquivo de saída
+                $file = 'app/output/datagrid-exporta.csv';
+                
+                $handler = fopen($file, 'w');
+                //percorre os dados
+                foreach ($data as $row)
+                {
+                    //escreve cada linha percorrida para o arquivo de saída csv
+                    fputcsv($handler, $row);
+                }
+                //força o download do arquivo
+                fclose($handler);
+            
+                parent::openFile($file);
+            }
+        }
+        catch (Exception $e)
+        {
+            new TMessage('error', $e->getMessage());
+        }
+    }  
 
     public static function onView($param)
     {
