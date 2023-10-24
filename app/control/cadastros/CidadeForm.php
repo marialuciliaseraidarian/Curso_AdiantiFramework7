@@ -82,9 +82,9 @@ class CidadeForm extends TPage
         {
             TTransaction::open('curso');
             //verifica se está vindo na url o id, se tiver é uma edição, senão é um registro novo
-            if(isset($param['id']))
+            if(isset($param['key']))
             {
-                $key = $param['id'];
+                $key = $param['key'];
                 $cidade = new Cidade($key);
                 $this->form->setData($cidade);
             }
