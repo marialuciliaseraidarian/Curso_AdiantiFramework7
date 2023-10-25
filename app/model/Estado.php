@@ -1,4 +1,7 @@
 <?php
+
+use Adianti\Database\TRecord;
+
 /**
  * Estado Active Record
  * @author  <your-name-here>

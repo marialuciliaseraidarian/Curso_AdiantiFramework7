@@ -1,4 +1,7 @@
 <?php
+
+use Adianti\Database\TRecord;
+
 /**
  * Categoria Active Record
  * @author  <your-name-here>

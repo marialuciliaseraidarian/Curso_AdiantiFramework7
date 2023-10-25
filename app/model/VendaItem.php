@@ -1,4 +1,7 @@
 <?php
+
+use Adianti\Database\TRecord;
+
 /**
  * VendaItem Active Record
  * @author  <your-name-here>

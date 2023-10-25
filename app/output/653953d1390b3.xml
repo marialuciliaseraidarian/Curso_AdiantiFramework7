@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+  <Cliente>
+    <id>2</id>
+    <nome>Amy Winehouse</nome>
+    <endereco>Rua do Amy Winehouse</endereco>
+    <cidade_nome__cidade_estado_nome>São Paulo - SP</cidade_nome__cidade_estado_nome>
+    <genero>F</genero>
+  </Cliente>
+  <Cliente>
+    <id>3</id>
+    <nome>Aretha Franklin</nome>
+    <endereco>Rua do Aretha Franklin</endereco>
+    <cidade_nome__cidade_estado_nome>São Paulo - SP</cidade_nome__cidade_estado_nome>
+    <genero>F</genero>
+  </Cliente>
+  <Cliente>
+    <id>4</id>
+    <nome>B B King</nome>
+    <endereco>Rua do B B King</endereco>
+    <cidade_nome__cidade_estado_nome>São Paulo - SP</cidade_nome__cidade_estado_nome>
+    <genero>M</genero>
+  </Cliente>
+  <Cliente>
+    <id>5</id>
+    <nome>Bob Dylan</nome>
+    <endereco>Rua do Bob Dylan</endereco>
+    <cidade_nome__cidade_estado_nome>São Paulo - SP</cidade_nome__cidade_estado_nome>
+    <genero>M</genero>
+  </Cliente>
+  <Cliente>
+    <id>35</id>
+    <nome>Ray Charles</nome>
+    <endereco>Rua do Ray Charles</endereco>
+    <cidade_nome__cidade_estado_nome>São Paulo - SP</cidade_nome__cidade_estado_nome>
+    <genero>M</genero>
+  </Cliente>
+  <Cliente>
+    <id>37</id>
+    <nome>Roy Orbison</nome>
+    <endereco>Rua do Roy Orbison</endereco>
+    <cidade_nome__cidade_estado_nome>São Paulo - SP</cidade_nome__cidade_estado_nome>
+    <genero>M</genero>
+  </Cliente>
+  <Cliente>
+    <id>39</id>
+    <nome>Willie Nelson</nome>
+    <endereco>Rua do Willie Nelson</endereco>
+    <cidade_nome__cidade_estado_nome>São Paulo - SP</cidade_nome__cidade_estado_nome>
+    <genero>M</genero>
+  </Cliente>
+</dataset>

@@ -1,9 +1,12 @@
 <?php
+
+use Adianti\Database\TRecord;
+
 /**
  * Contato Active Record
  * @author  <your-name-here>
  */
-class Contato extends TRecord
+class Contato extends TRecord   
 {
     const TABLENAME = 'contato';
     const PRIMARYKEY= 'id';
