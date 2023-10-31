@@ -84,6 +84,8 @@ class ClienteForm extends TPage
         $contato_tipo->setSize('100%');
         $contato_valor->setSize('100%');
         $contato_tipo->addItems( ['email' => 'E-mail', 'telefone' => 'Telefone'] );
+        $nascimento->setMask('dd/mm/yyyy');
+        $nascimento->setDatabaseMask('yyyy-mm-dd');
         
         $this->contatos->addField( '<b>Tipo</b>',   $contato_tipo,  ['width' => '50%'] );
         $this->contatos->addField( '<b>Valor</b>',  $contato_valor, ['width' => '50%'] );
