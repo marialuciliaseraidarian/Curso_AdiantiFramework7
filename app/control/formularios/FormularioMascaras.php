@@ -44,7 +44,7 @@ class FormularioMascaras extends TPage
         $element11->setMask('SSS-9A99'); // usado para placa de carro (3 caracteres string + 1 numerico + 1 alfanumérico e 2 numéricos)
         $element12->forceUpperCase(); // força digitação maiúscula
         $element13->forceLowerCase(); // força digitação minúscula
-        $element14->setNumericMask('2', ',', '.', true); // máscara numérica para valores
+        $element14->setNumericMask('2', ',', '.', true); // máscara numérica para valores, o true remove a máscara para gravar no BD
 
         $this->form->addFields( [new TLabel('Element 1')], [$element1] ); 
         $this->form->addFields( [new TLabel('Element 2')], [$element2] ); 

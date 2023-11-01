@@ -10,6 +10,7 @@ use Adianti\Widget\Datagrid\TDataGrid;
 use Adianti\Widget\Datagrid\TDataGridAction;
 use Adianti\Widget\Datagrid\TDataGridColumn;
 use Adianti\Widget\Dialog\TMessage;
+use Adianti\Widget\Dialog\TToast;
 use Adianti\Widget\Form\TButton;
 use Adianti\Widget\Form\TDate;
 use Adianti\Widget\Form\TEntry;
@@ -48,8 +49,7 @@ class VendaForm extends TWindow
         $produto_detail_produto_id  = new TDBUniqueSearch('produto_detail_produto_id', 'curso', 'Produto', 'id', 'descricao');
         $produto_detail_preco_venda = new TEntry('produto_detail_preco_venda');
         $produto_detail_quantidade  = new TEntry('produto_detail_quantidade');
-        $produto_detail_desconto    = new TEntry('produto_detail_desconto');
-        $produto_detail_total       = new TEntry('produto_detail_total');
+        $produto_detail_desconto    = new TEntry('produto_detail_desconto');       
         
         // ajustar propriedades dos campos
         $id->setEditable(false);
@@ -120,6 +120,12 @@ class VendaForm extends TWindow
         $col_descr->setTransformer(function($value) {
             return Produto::findInTransaction('curso', $value)->descricao;
         });
+
+        //soma o total da coluna col_subt da datagrid
+        $col_subt->enableTotal('sum', 'R$ ', 2, ',', '.');
+
+        //executa uma ação em cima do total calculado acima
+        $this->produto_list->setMutationAction(new TAction([$this, 'onMutationAction']));
         
         //tira a visibilidade das colunas
         $col_id->setVisibility(false);
@@ -354,6 +360,19 @@ class VendaForm extends TWindow
             new TMessage('error', $e->getMessage());
             TTransaction::rollback();
         }
+    }
+
+    public static function onMutationAction($param)
+    {
+        $total = 0;
+        if($param['list_data'])
+        {
+            foreach ($param['list_data'] as $row)
+            {
+               $total += (floatval($row['preco_venda']) - floatval($row['desconto'])) * floatval($row['quantidade']);
+            }
+        }
+        TToast::show('info', 'Total da venda: R$ ' . number_format($total, 2, ',', '.'), 'bottom right');
     }
         
     public static function onClose()
