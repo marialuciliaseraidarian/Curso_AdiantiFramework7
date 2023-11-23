@@ -2,16 +2,11 @@
 
 use Adianti\Control\TAction;
 use Adianti\Control\TPage;
-use Adianti\Database\TCriteria;
 use Adianti\Database\TDatabase;
-use Adianti\Database\TFilter;
-use Adianti\Database\TRepository;
 use Adianti\Database\TTransaction;
 use Adianti\Widget\Dialog\TMessage;
-use Adianti\Widget\Form\TEntry;
 use Adianti\Widget\Form\TLabel;
 use Adianti\Widget\Form\TRadioGroup;
-use Adianti\Widget\Wrapper\TDBCombo;
 use Adianti\Widget\Wrapper\TDBUniqueSearch;
 use Adianti\Wrapper\BootstrapFormBuilder;
 
