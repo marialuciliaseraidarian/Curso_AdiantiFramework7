@@ -433,6 +433,10 @@
                 <icon>far:circle fa-fw</icon>
                 <action>CardView</action>
             </menuitem>
+             <menuitem label='Cards de Videos'>
+                <icon>far:circle fa-fw</icon>
+                <action>VideoCard</action>
+            </menuitem>
             <menuitem label='Ícones'>
                 <icon>far:circle fa-fw</icon>
                 <action>IconView</action>

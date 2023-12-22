@@ -1,4 +1,10 @@
 <?php
+
+use Adianti\Control\TAction;
+use Adianti\Control\TPage;
+use Adianti\Widget\Dialog\TMessage;
+use Adianti\Widget\Util\TIconView;
+
 class IconView extends TPage
 {
     private $iconview;
@@ -43,17 +49,22 @@ class IconView extends TPage
         $item->nome    = 'Arquivo C';
         $item->icone   = 'far:file orange fa-4x';
         $this->iconview->addItem($item);
-        
+
+        //Adiciona um popover com o nome        
         // $this->iconview->enablePopover('', '<b>Nome:</b> {nome}');
         
+       //define os atributos, qual é o icone, qual é o label, etc.
         $this->iconview->setIconAttribute('icone');
         $this->iconview->setLabelAttribute('nome');
-        $this->iconview->setInfoAttributes(['nome', 'caminho']);
+        $this->iconview->setInfoAttributes(['nome', 'caminho']);//passa os atributos selecionados para as ações
         
+        //a display-condition mostra ou oculta uma ação de acordo com a condição inserida, neste caso só aparecerá a opção de excluir
+        // para os arquivos, para as pastas não aparecerá
         $display_condition = function($object) {
             return ($object->tipo == 'arquivo');
         };
         
+       //cria um menu com opções de ações, ela será visível se clicar com o botão direito em cima do ícone.
         $this->iconview->addContextMenuOption('Opções');
         $this->iconview->addContextMenuOption('');
         $this->iconview->addContextMenuOption('Abrir', new TAction([$this, 'onOpen']), 'far:folder-open blue');

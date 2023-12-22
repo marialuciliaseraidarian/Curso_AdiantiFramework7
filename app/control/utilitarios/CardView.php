@@ -1,4 +1,10 @@
 <?php
+
+use Adianti\Control\TAction;
+use Adianti\Control\TPage;
+use Adianti\Widget\Dialog\TMessage;
+use Adianti\Widget\Util\TCardView;
+
 class CardView extends TPage
 {
     public function __construct()
@@ -7,6 +13,7 @@ class CardView extends TPage
         
         $cards = new TCardView;
         
+        //tranforma o array em objeto para facilitar a manipulação, fica parecido com o datagrid que é um objeto.
         $items = [];
         $items[] = (object) ['id' => 1, 'titulo' => 'Item 1', 'conteudo' => 'conteúdo do item 1'];
         $items[] = (object) ['id' => 2, 'titulo' => 'Item 2', 'conteudo' => 'conteúdo do item 2'];
