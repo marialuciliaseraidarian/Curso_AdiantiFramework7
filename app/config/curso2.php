@@ -1,10 +1,10 @@
 <?php
 return [
-    'host'  =>  "",
+    'host'  =>  "127.0.0.1",
     'port'  =>  "",
-    'name'  =>  "app/database/curso.db",
-    'user'  =>  "",
-    'pass'  =>  "",
-    'type'  =>  "sqlite",
+    'name'  =>  "curso",
+    'user'  =>  "root",
+    'pass'  =>  " ",
+    'type'  =>  "mysql",
     'prep'  =>  "1"
 ];

@@ -1,5 +1,3 @@
-BEGIN TRANSACTION;
-
 CREATE TABLE categoria (
   id INTEGER PRIMARY KEY NOT NULL,
   nome VARCHAR(200)
@@ -54,52 +52,52 @@ CREATE TABLE cliente (
   genero CHAR(1), 
   categoria_id INTEGER NOT NULL, 
   cidade_id INTEGER NOT NULL,
-  created_at timestamp,
-  updated_at timestamp, 
-  FOREIGN KEY(cidade_id)    REFERENCES cidade(id), 
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY(cidade_id) REFERENCES cidade(id), 
   FOREIGN KEY(categoria_id) REFERENCES categoria(id) 
 );
 
-INSERT INTO cliente VALUES(1,'Al Green','Rua do Al Green','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',2,3,NULL,'2019-05-19 16:30:06');
-INSERT INTO cliente VALUES(2,'Amy Winehouse','Rua do Amy Winehouse','555 4444 8888','1990-01-01','Y','contato@gmail.com','F',1,4,NULL,NULL);
-INSERT INTO cliente VALUES(3,'Aretha Franklin','Rua do Aretha Franklin','555 4444 8888','1990-01-01','Y','contato@gmail.com','F',1,4,NULL,NULL);
-INSERT INTO cliente VALUES(4,'B B King','Rua do B B King','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,4,NULL,NULL);
-INSERT INTO cliente VALUES(5,'Bob Dylan','Rua do Bob Dylan','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,4,NULL,NULL);
-INSERT INTO cliente VALUES(6,'Bob Marley','Rua do Bob Marley','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,1,NULL,'2019-05-19 16:29:22');
-INSERT INTO cliente VALUES(7,'Bono Vox','Rua do Bono Vox','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,2,NULL,NULL);
-INSERT INTO cliente VALUES(8,'Bruce Springsteen','Rua do Bruce Springsteen','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,2,NULL,NULL);
-INSERT INTO cliente VALUES(9,'Chuck Berry','Rua do Chuck Berry','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,3,NULL,NULL);
-INSERT INTO cliente VALUES(10,'Dave Grohl','Rua do Dave Grohl','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,2,NULL,NULL);
-INSERT INTO cliente VALUES(11,'Dave Hole','Rua do Dave Hole','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,2,NULL,NULL);
-INSERT INTO cliente VALUES(12,'David Bowie','Rua do David Bowie','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,3,NULL,NULL);
-INSERT INTO cliente VALUES(13,'Dionne warwick','Rua do Dionne warwick','555 4444 8888','1990-01-01','Y','contato@gmail.com','F',1,2,NULL,NULL);
-INSERT INTO cliente VALUES(14,'Elton John','Rua do Elton John','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,2,NULL,NULL);
-INSERT INTO cliente VALUES(15,'Elvis Presley','Rua do Elvis Presley','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,2,NULL,NULL);
-INSERT INTO cliente VALUES(16,'Etta James','Rua do Etta James','555 4444 8888','1990-01-01','N','contato@gmail.com','F',1,3,NULL,NULL);
-INSERT INTO cliente VALUES(17,'Fernando Noronha','Rua do Fernando Noronha','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,2,NULL,NULL);
-INSERT INTO cliente VALUES(18,'Frank Sinatra','Rua do Frank Sinatra','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,3,NULL,NULL);
-INSERT INTO cliente VALUES(19,'Freddie mercury','Rua do Freddie mercury','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,3,NULL,NULL);
-INSERT INTO cliente VALUES(20,'George Thorogood','Rua do George Thorogood','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,2,NULL,NULL);
-INSERT INTO cliente VALUES(21,'Buddy Guy','Rua do Buddy Guy','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,3,NULL,NULL);
-INSERT INTO cliente VALUES(22,'Herbert Vianna','Rua do Herbert Vianna','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,2,NULL,NULL);
-INSERT INTO cliente VALUES(23,'Humberto Gessinger','Rua do Humberto Gessinger','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,1,NULL,NULL);
-INSERT INTO cliente VALUES(24,'Janis Joplin','Rua do Janis Joplin','555 4444 8888','1990-01-01','Y','contato@gmail.com','F',1,1,NULL,NULL);
-INSERT INTO cliente VALUES(25,'John Fogerty','Rua do John Fogerty','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,3,NULL,NULL);
-INSERT INTO cliente VALUES(26,'John Lennon','Rua do John Lennon','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,1,NULL,NULL);
-INSERT INTO cliente VALUES(27,'Johnny Cash','Rua do Johnny Cash','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,1,NULL,NULL);
-INSERT INTO cliente VALUES(28,'Kurt Cobain','Rua do Kurt Cobain','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,1,NULL,NULL);
-INSERT INTO cliente VALUES(29,'Marvin Gaye','Rua do Marvin Gaye','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,1,NULL,NULL);
-INSERT INTO cliente VALUES(30,'Neil Yuoung','Rua do Neil Yuoung','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,1,NULL,NULL);
-INSERT INTO cliente VALUES(31,'Otis Redding','Rua do Otis Redding','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,1,NULL,NULL);
-INSERT INTO cliente VALUES(32,'Paul McCartney','Rua do Paul McCartney','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,2,NULL,NULL);
-INSERT INTO cliente VALUES(33,'Paul Simon','Rua do Paul Simon','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,1,NULL,NULL);
-INSERT INTO cliente VALUES(34,'Raul Seixas','Rua do Raul Seixas','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,1,NULL,NULL);
-INSERT INTO cliente VALUES(35,'Ray Charles','Rua do Ray Charles','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,4,NULL,NULL);
-INSERT INTO cliente VALUES(36,'Renato Russo','Rua do Renato Russo','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,2,NULL,NULL);
-INSERT INTO cliente VALUES(37,'Roy Orbison','Rua do Roy Orbison','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,4,NULL,NULL);
-INSERT INTO cliente VALUES(38,'Stevie Wonder','Rua do Stevie Wonder','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,1,NULL,NULL);
-INSERT INTO cliente VALUES(39,'Willie Nelson','Rua do Willie Nelson','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,4,NULL,NULL);
-INSERT INTO cliente VALUES(40,'Wilson Pickett','Rua do Wilson Pickett','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,1,NULL,'2019-05-19 16:19:18');
+INSERT INTO cliente VALUES(1,'Al Green','Rua do Al Green','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',2,3,'2019-05-19 16:30:06', '2019-05-19 16:30:06');
+INSERT INTO cliente VALUES(2,'Amy Winehouse','Rua do Amy Winehouse','555 4444 8888','1990-01-01','Y','contato@gmail.com','F',1,4,'2023-11-19 16:30:06', '2023-11-19 16:30:06');
+INSERT INTO cliente VALUES(3,'Aretha Franklin','Rua do Aretha Franklin','555 4444 8888','1990-01-01','Y','contato@gmail.com','F',1,4,'2019-05-19 16:30:06', '2019-05-19 16:30:06');
+INSERT INTO cliente VALUES(4,'B B King','Rua do B B King','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,4,'2023-11-19 16:30:06', '2023-11-19 16:30:06');
+INSERT INTO cliente VALUES(5,'Bob Dylan','Rua do Bob Dylan','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,4,'2019-05-19 16:30:06', '2019-05-19 16:30:06');
+INSERT INTO cliente VALUES(6,'Bob Marley','Rua do Bob Marley','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,1,'2023-11-19 16:30:06', '2023-11-19 16:30:06');
+INSERT INTO cliente VALUES(7,'Bono Vox','Rua do Bono Vox','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,2,'2023-12-08 16:30:06', '2023-12-19 16:30:06');
+INSERT INTO cliente VALUES(8,'Bruce Springsteen','Rua do Bruce Springsteen','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,2,'2023-11-19 16:30:06', '2023-11-19 16:30:06');
+INSERT INTO cliente VALUES(9,'Chuck Berry','Rua do Chuck Berry','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,3,'2023-11-19 16:30:06', '2023-11-19 16:30:06');
+INSERT INTO cliente VALUES(10,'Dave Grohl','Rua do Dave Grohl','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,2,'2023-11-19 16:30:06', '2023-11-19 16:30:06');
+INSERT INTO cliente VALUES(11,'Dave Hole','Rua do Dave Hole','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,2,'2023-12-08 16:30:06', '2023-12-19 16:30:06');
+INSERT INTO cliente VALUES(12,'David Bowie','Rua do David Bowie','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,3,'2023-11-19 16:30:06', '2023-11-19 16:30:06');
+INSERT INTO cliente VALUES(13,'Dionne warwick','Rua do Dionne warwick','555 4444 8888','1990-01-01','Y','contato@gmail.com','F',1,2,'2023-11-19 16:30:06', '2023-11-19 16:30:06');
+INSERT INTO cliente VALUES(14,'Elton John','Rua do Elton John','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,2,'2023-12-08 16:30:06', '2023-12-19 16:30:06');
+INSERT INTO cliente VALUES(15,'Elvis Presley','Rua do Elvis Presley','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,2,'2023-12-08 16:30:06', '2023-12-19 16:30:06');
+INSERT INTO cliente VALUES(16,'Etta James','Rua do Etta James','555 4444 8888','1990-01-01','N','contato@gmail.com','F',1,3,'2023-12-08 16:30:06', '2023-12-19 16:30:06');
+INSERT INTO cliente VALUES(17,'Fernando Noronha','Rua do Fernando Noronha','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,2,'2023-12-08 16:30:06', '2023-12-19 16:30:06');
+INSERT INTO cliente VALUES(18,'Frank Sinatra','Rua do Frank Sinatra','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,3,'2023-12-08 16:30:06', '2023-12-19 16:30:06');
+INSERT INTO cliente VALUES(19,'Freddie mercury','Rua do Freddie mercury','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,3,'2023-12-08 16:30:06', '2023-12-19 16:30:06');
+INSERT INTO cliente VALUES(20,'George Thorogood','Rua do George Thorogood','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,2,'2023-10-08 16:30:06', '2024-01-09 16:30:06');
+INSERT INTO cliente VALUES(21,'Buddy Guy','Rua do Buddy Guy','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,3,'2023-10-08 16:30:06', '2024-01-09 16:30:06');
+INSERT INTO cliente VALUES(22,'Herbert Vianna','Rua do Herbert Vianna','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,2,'2023-10-08 16:30:06', '2024-01-09 16:30:06');
+INSERT INTO cliente VALUES(23,'Humberto Gessinger','Rua do Humberto Gessinger','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,1,'2023-10-08 16:30:06', '2024-01-09 16:30:06');
+INSERT INTO cliente VALUES(24,'Janis Joplin','Rua do Janis Joplin','555 4444 8888','1990-01-01','Y','contato@gmail.com','F',1,1,'2023-10-08 16:30:06', '2024-01-09 16:30:06');
+INSERT INTO cliente VALUES(25,'John Fogerty','Rua do John Fogerty','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,3,'2023-10-08 16:30:06', '2024-01-09 16:30:06');
+INSERT INTO cliente VALUES(26,'John Lennon','Rua do John Lennon','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,1,'2023-10-08 16:30:06', '2024-01-09 16:30:06');
+INSERT INTO cliente VALUES(27,'Johnny Cash','Rua do Johnny Cash','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,1,'2023-10-08 16:30:06', '2024-01-09 16:30:06');
+INSERT INTO cliente VALUES(28,'Kurt Cobain','Rua do Kurt Cobain','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,1,'2023-10-08 16:30:06', '2024-01-09 16:30:06');
+INSERT INTO cliente VALUES(29,'Marvin Gaye','Rua do Marvin Gaye','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,1,'2023-10-08 16:30:06', '2024-01-09 16:30:06');
+INSERT INTO cliente VALUES(30,'Neil Yuoung','Rua do Neil Yuoung','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,1,'2022-12-21 16:30:06', '2023-01-09 16:30:06');
+INSERT INTO cliente VALUES(31,'Otis Redding','Rua do Otis Redding','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,1,'2022-12-21 16:30:06', '2023-01-09 16:30:06');
+INSERT INTO cliente VALUES(32,'Paul McCartney','Rua do Paul McCartney','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,2,'2022-12-21 16:30:06', '2023-01-09 16:30:06');
+INSERT INTO cliente VALUES(33,'Paul Simon','Rua do Paul Simon','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,1,'2022-12-21 16:30:06', '2023-01-09 16:30:06');
+INSERT INTO cliente VALUES(34,'Raul Seixas','Rua do Raul Seixas','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,1,'2022-12-21 16:30:06', '2023-01-09 16:30:06');
+INSERT INTO cliente VALUES(35,'Ray Charles','Rua do Ray Charles','555 4444 8888','1990-01-01','Y','contato@gmail.com','M',1,4,'2022-12-21 16:30:06', '2023-01-09 16:30:06');
+INSERT INTO cliente VALUES(36,'Renato Russo','Rua do Renato Russo','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,2,'2022-12-21 16:30:06', '2023-01-09 16:30:06');
+INSERT INTO cliente VALUES(37,'Roy Orbison','Rua do Roy Orbison','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,4,'2022-12-21 16:30:06', '2023-01-09 16:30:06');
+INSERT INTO cliente VALUES(38,'Stevie Wonder','Rua do Stevie Wonder','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,1,'2022-12-21 16:30:06', '2023-01-09 16:30:06');
+INSERT INTO cliente VALUES(39,'Willie Nelson','Rua do Willie Nelson','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,4,'2023-10-08 16:30:06', '2024-01-09 16:30:06');
+INSERT INTO cliente VALUES(40,'Wilson Pickett','Rua do Wilson Pickett','555 4444 8888','1990-01-01','N','contato@gmail.com','M',1,1,'2023-10-08 16:30:06', '2024-01-09 16:30:06');
 
 CREATE TABLE contato (
   id INTEGER PRIMARY KEY NOT NULL, 
@@ -267,4 +265,4 @@ CREATE VIEW view_vendas as
            as last_date 
         from
            cliente;
-COMMIT;
+

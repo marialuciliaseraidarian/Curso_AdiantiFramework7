@@ -41,10 +41,6 @@
     <menuitem label='Básico'>
         <icon>fa:cube fa-fw</icon>
         <menu>
-            <menuitem label='Teste'>
-                <icon>far:circle fa-fw</icon>
-                <action>TesteView#method=onEvento</action>
-            </menuitem>
             <menuitem label='Template Básico'>
                 <icon>far:circle fa-fw</icon>
                 <action>TemplateViewBasico</action>
@@ -432,6 +428,10 @@
             <menuitem label='Cards'>
                 <icon>far:circle fa-fw</icon>
                 <action>CardView</action>
+            </menuitem>
+             <menuitem label='Cards de Videos'>
+                <icon>far:circle fa-fw</icon>
+                <action>VideoCard</action>
             </menuitem>
             <menuitem label='Ícones'>
                 <icon>far:circle fa-fw</icon>
